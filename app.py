@@ -4,11 +4,13 @@ and navigate your page with respect to `selected_page` session state
 """
 
 import streamlit as st
-from src.pages import HomePage, MyPage1, MyPage2
+from src.pages import HomePage, ClassificationPage, RegressionPage
 
 
 # page config
-st.set_page_config(page_title="My Project", layout="centered", initial_sidebar_state="collapsed")
+st.set_page_config(page_title="My Project",
+                   layout="wide",
+                   initial_sidebar_state="collapsed")
 
 
 # set session states
@@ -21,8 +23,8 @@ match st.session_state['selected_page']:
     case 'home':
         HomePage.load_home_page()
 
-    case 'mypage1':
-        MyPage1.load_mypage1()
+    case 'classification':
+        ClassificationPage.load_classification_page()
 
-    case 'mypage2':
-        MyPage2.load_mypage2()
+    case 'regression':
+        RegressionPage.load_regression_page()

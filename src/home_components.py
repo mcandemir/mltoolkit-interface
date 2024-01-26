@@ -9,27 +9,41 @@ from src import callbacks
 
 def component_title():
     """
-    example component with a home button and header
+    app title
     """
-    st.markdown('# Welcome to MLToolKit!')
+    cols = st.columns(3)
     
+    with cols[1]:
+        st.markdown('# Welcome to MLToolKit!')
+        st.markdown('#### What is MLToolKit?')
+        st.markdown("""
+                    MLToolKit is a user interface where you can apply 
+                    various machine learning methods with no-code and 
+                    learn how they work!
+                    """)
 
 
-def component_description():
+def component_buttons():
     """
-    example component with a page selection
+    app navigation
     """
-    st.markdown('#### What is MLToolKit?')
-    st.markdown('MLToolKit is a user interface where you can apply various machine learning methods with no-code and learn how they work!')
+    cols = st.columns(3)
 
-def component_mypage1_title():
-    """
-    example component with mypage1 page info
-    """
-    st.write('My Page 1')
+    with cols[1]:
+        cols = st.columns(2)
+        with cols[0]:
+            st.button('🎯 Classification',
+                    use_container_width=True,
+                    on_click=callbacks.set_page_classification)
+        
+        with cols[1]:
+            st.button('📈 Regression',
+                    use_container_width=True,
+                    on_click=callbacks.set_page_regression)
+
 
 def component_mypage2_title():
     """
     example component with mypage2 page info
     """
-    st.write('My Page 2')
+    pass

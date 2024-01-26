@@ -3,7 +3,7 @@ this is where you define your pages (as classes with static "loadPage" functions
 and build your pages with the components you created
 """
 
-from src import home_components
+from src import home_components, clf_components, reg_components
 
 
 
@@ -19,30 +19,35 @@ class HomePage():
         example home page load function
         """
         home_components.component_title()
-        home_components.component_description()
+        home_components.component_buttons()
 
 
 # EXAMPLE PAGE ================================================================================
-class MyPage1():
+class ClassificationPage():
     """
     Example Page class
     """
     @staticmethod
-    def load_mypage1():
+    def load_classification_page():
         """
         example page load function
         """
-        home_components.component_title()
+        clf_components.component_homebutton()
+        clf_components.component_header()
+        clf_components.component_data()
+
 
 
 # ML PAGE ================================================================================
-class MyPage2():
+class RegressionPage():
     """
     Example Page class
     """
     @staticmethod
-    def load_mypage2():
+    def load_regression_page():
         """
         example page load function
         """
-        home_components.component_title()
+        
+        reg_components.component_homebutton()
+        reg_components.component_header()
